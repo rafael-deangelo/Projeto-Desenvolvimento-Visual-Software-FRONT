@@ -1,1 +1,11 @@
-<p>cadastrar-vaga works!</p>
+<h2>Cadastrar Vaga</h2>
+
+<!--- Material Design Angular-->
+
+<div id="valor">
+    <label for="txtValor">ID Morador</label>
+    <input type="number" id="moradorId" [(ngModel)]="moradorId" />        <!--- Se quiser que não aparece com a inicialização 0 na soma continua como txt, se não number --> 
+</div>
+<div id="botao">
+    <button id="btnCadastrar" (click)="cadastrar()">Cadastrar</button>
+</div>
