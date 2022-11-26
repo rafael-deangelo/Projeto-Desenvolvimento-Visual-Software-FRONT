@@ -13,6 +13,7 @@
       <th>Placa</th>
     </tr>
     <tr *ngFor="let vaga of vagas">
+      <td>{{ vaga.vagasId }}</td>
       <td>{{ vaga.moradorId }}</td>
       <td>{{ vaga.morador?.nome }}</td>
       <td>{{ vaga.morador?.cpf }}</td>
