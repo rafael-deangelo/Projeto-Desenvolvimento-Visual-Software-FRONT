@@ -5,7 +5,7 @@ export interface Morador {
     apartamento: string;
     email: string;
     bloco: string;
-    modeloVeiculo: string;
+    modelo_veiculo: string;
     cor: string;
     placa: string;
 }

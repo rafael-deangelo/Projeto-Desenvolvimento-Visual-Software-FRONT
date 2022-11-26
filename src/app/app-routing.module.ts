@@ -11,6 +11,10 @@ const routes: Routes = [
     component: CadastrarMoradorComponent
   },
   {
+    path : "pages/morador/cadastrar/:id",     
+    component: CadastrarMoradorComponent  
+  },
+  {
     path: "pages/morador/listar",
     component: ListarMoradorComponent
   },

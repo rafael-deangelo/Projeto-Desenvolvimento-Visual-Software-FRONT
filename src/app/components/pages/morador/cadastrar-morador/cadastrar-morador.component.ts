@@ -26,6 +26,25 @@ export class CadastrarMoradorComponent {
     private router: Router,
     private route: ActivatedRoute) { } 
 
+    ngOnInit(): void {
+      this.route.params.subscribe((params) => {
+        let { id } = params;
+        if(id != undefined){
+          this.http.get<Morador>
+          (`https://localhost:5001/api/morador/buscar/${id}`)
+          .subscribe({
+            next: (morador) => {
+              this.nome = morador.nome;
+              this.cpf =  morador.cpf;
+              this.moradorid = morador.moradorId!;     // cria uma variavel global e com esse vc consegue saber se vai cadastrar ou alterar ele controla os dois
+            },
+          });
+        }
+
+      });
+  }
+
+
   cadastrar(): void {
     let morador : Morador = {
       nome : this.nome,
@@ -33,7 +52,7 @@ export class CadastrarMoradorComponent {
       apartamento : this.apart,
       email : this.email,
       bloco: this.bloco,
-      modeloVeiculo : this.modeloVeiculo,
+      modelo_veiculo : this.modeloVeiculo,
       cor : this.cor,
       placa : this.placa,
     };
@@ -58,7 +77,7 @@ export class CadastrarMoradorComponent {
         }
       },
     });
-   }
+  }
 
   alterar(): void {
     let morador : Morador = {
@@ -68,7 +87,7 @@ export class CadastrarMoradorComponent {
       apartamento : this.apart,
       email : this.email,
       bloco: this.bloco,
-      modeloVeiculo : this.modeloVeiculo,
+      modelo_veiculo : this.modeloVeiculo,
       cor : this.cor,
       placa : this.placa,
     };
@@ -92,5 +111,5 @@ export class CadastrarMoradorComponent {
         }
       },
     });
-  }
+   }
 }

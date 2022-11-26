@@ -1,1 +1,32 @@
-<p>listar-morador works!</p>
+<h2>Listagem de Moradores</h2>
+
+<table>
+    <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Cpf</th>
+        <th>Apartamento</th>
+        <th>E-mail</th>
+        <th>Bloco</th>
+        <th>Modelo Veiculo</th>
+        <th>Cor</th>
+        <th>Placa</th>
+    </tr>
+    <tr *ngFor="let morador of moradores">
+        <td>{{ morador.moradorId }}</td>
+        <td>{{ morador.nome }}</td>
+        <td>{{ morador.cpf }}</td>
+        <td>{{ morador.apartamento }}</td>
+        <td>{{ morador.email }}</td>
+        <td>{{ morador.bloco }}</td>
+        <td>{{ morador.modelo_veiculo }}</td>
+        <td>{{ morador.cor }}</td>
+        <td>{{ morador.placa }}</td>
+        <td>
+            <button (click)="deletar(morador.moradorId!)">Deletar</button>
+        </td>
+        <td>
+            <a routerLink="/pages/morador/cadastrar/{{ morador. moradorId }}">Alterar</a>
+        </td>
+    </tr>
+</table>
