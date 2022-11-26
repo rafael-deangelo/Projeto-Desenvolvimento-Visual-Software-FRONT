@@ -1,1 +1,44 @@
-<p>cadastrar-morador works!</p>
+<h2>Cadastrar Morador</h2>
+
+<div id="nome">
+    <label for="txtNome">Nome</label>
+    <input type="text" id="txtNome" [(ngModel)]="nome" />  
+</div>      
+<div id="cpf">
+    <label for="txtCpf">CPF</label>
+    <input type="text" id="txtCpf" [(ngModel)]="cpf" />
+</div>
+<div id="ap">
+    <label for="txtAp">Apartamento</label>
+    <input type="text" id="txtAp" [(ngModel)]="apart" />
+</div>
+<div id="email">
+    <label for="txtEmail">Email</label>
+    <input type="text" id="txtEmail" [(ngModel)]="email" />
+</div>
+<div id="bloco">
+    <label for="txtBloco">Bloco</label>
+    <input type="text" id="txtBloco" [(ngModel)]="bloco" />
+</div>
+<div id="modeloVeiculo">
+    <label for="txtModeloVeiculo">Modelo veículo</label>
+    <input type="text" id="txtModeloVeiculo" [(ngModel)]="modeloVeiculo" />
+</div>
+<div id="cor">
+    <label for="txtCor">Cor</label>
+    <input type="text" id="txtCor" [(ngModel)]="cor" />
+</div>
+<div id="placa">
+    <label for="txtPlaca">Placa</label>
+    <input type="text" id="txtPlaca" [(ngModel)]="placa" />
+</div>
+<div id="botao">
+    <button *ngIf="!moradorid" id="btnCadastrar" (click)="cadastrar()">Cadastrar</button>
+    <button *ngIf="moradorid" id="btnCadastrar" (click)="alterar()">Salvar</button>
+</div>
+<div>
+    <p class="erro">
+        {{ erro }}
+    </p>
+</div>
+
