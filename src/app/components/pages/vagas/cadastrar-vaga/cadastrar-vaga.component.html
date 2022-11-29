@@ -1,11 +1,14 @@
-<h2>Cadastrar Vaga</h2>
+<mat-card class="container">
+    <mat-card-header> <mat-card-title>Cadastrar Vaga</mat-card-title></mat-card-header>
+    <mat-card-content>
+        <mat-form-field id="morador" class="input">
+            <mat-label for="txtValor">ID Morador</mat-label>
+            <input matInput type="number" id="moradorId" [(ngModel)]="moradorId" />  
+        </mat-form-field>
+    </mat-card-content>
+    <button class="botao" mat-raised-button color="warn" id="btnCadastrar" (click)="cadastrar()">Cadastrar</button>
+</mat-card>
+
+
 
 <!--- Material Design Angular-->
-
-<div id="valor">
-    <label for="txtValor">ID Morador</label>
-    <input type="number" id="moradorId" [(ngModel)]="moradorId" />        <!--- Se quiser que não aparece com a inicialização 0 na soma continua como txt, se não number --> 
-</div>
-<div id="botao">
-    <button id="btnCadastrar" (click)="cadastrar()">Cadastrar</button>
-</div>

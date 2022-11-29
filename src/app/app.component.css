@@ -1,0 +1,14 @@
+.container{
+    height: calc(100% - 64px);
+}
+.icon{
+    margin-right: 10px;
+}
+.content{
+    padding: 16px;
+    background-image: url(../garagem-condominio.jpg);
+}
+
+.toolbar{
+    background-color: darkgoldenrod;
+}
