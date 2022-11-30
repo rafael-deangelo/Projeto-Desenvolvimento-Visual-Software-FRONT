@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Morador } from 'src/app/models/Morador';
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-listar-morador',
@@ -10,7 +11,7 @@ import { Morador } from 'src/app/models/Morador';
 export class ListarMoradorComponent {
   moradores!: Morador[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     // CONFIGURAÇÃO DA REQUISIÇÃO
@@ -34,6 +35,10 @@ export class ListarMoradorComponent {
     (`https://localhost:5001/api/morador/deletar/${id}`)
     .subscribe({
       next : (morador) => {
+        this._snackBar.open("Morador deletado com sucesso!", "Ok!", {
+          verticalPosition: "top",
+          horizontalPosition: "center",
+        });
           this.ngOnInit();
       },
     });

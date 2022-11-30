@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Morador } from 'src/app/models/Morador';
 import { Vagas } from 'src/app/models/Vaga';
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 
 @Component({
@@ -17,7 +18,7 @@ export class CadastrarVagaComponent implements OnInit {
   data!: Date;
 
   constructor(
-    private http: HttpClient,private router: Router) {}
+    private http: HttpClient,private router: Router, private _snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     //Configuração da requisição
@@ -38,7 +39,11 @@ export class CadastrarVagaComponent implements OnInit {
     };
     console.log(vaga);
     this.http.post<Vagas>("https://localhost:5001/api/vagas/cadastrar", vaga).subscribe({
-      next: (funcionario) => {
+      next: (vaga) => {
+        this._snackBar.open("Vaga cadastrado com sucesso!", "Ok!", {
+          verticalPosition: "top",
+          horizontalPosition: "center",
+        });
         this.router.navigate(["pages/vagas/listar"]);
       },
     });

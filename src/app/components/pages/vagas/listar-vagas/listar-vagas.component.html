@@ -1,27 +1,40 @@
-<h2>Lista de vagas</h2>
-<table>
-    <tr>
-      <th>#</th>
-      <th>Id Morador</th>
-      <th>Nome</th>
-      <th>CPF</th>
-      <th>Apartamento</th>
-      <th>Email</th>
-      <th>Bloco</th>
-      <th>Modelo Do Veiculo</th>
-      <th>Cor</th>
-      <th>Placa</th>
-    </tr>
-    <tr *ngFor="let vaga of vagas">
-      <td>{{ vaga.vagasId }}</td>
-      <td>{{ vaga.moradorId }}</td>
-      <td>{{ vaga.morador?.nome }}</td>
-      <td>{{ vaga.morador?.cpf }}</td>
-      <td>{{ vaga.morador?.apartamento}}</td>
-      <td>{{ vaga.morador?.email}}</td>
-      <td>{{ vaga.morador?.bloco}}</td>
-      <td>{{ vaga.morador?.modelo_veiculo}}</td>
-      <td>{{ vaga.morador?.cor}}</td>
-      <td>{{ vaga.morador?.placa}}</td>
-    </tr>
-</table>
+<mat-card class="container">
+  <mat-card-header>
+    <mat-card-title> Lista de vagas </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <table>
+      <tr>
+        <th>#</th>
+        <th>Id Morador</th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Apartamento</th>
+        <th>Email</th>
+        <th>Bloco</th>
+        <th>Modelo Do Veiculo</th>
+        <th>Cor</th>
+        <th>Placa</th>
+      </tr>
+      <tr *ngFor="let vaga of vagas">
+        <td>{{ vaga.vagasId }}</td>
+        <td>{{ vaga.moradorId }}</td>
+        <td>{{ vaga.morador?.nome }}</td>
+        <td>{{ vaga.morador?.cpf }}</td>
+        <td>{{ vaga.morador?.apartamento}}</td>
+        <td>{{ vaga.morador?.email}}</td>
+        <td>{{ vaga.morador?.bloco}}</td>
+        <td>{{ vaga.morador?.modelo_veiculo}}</td>
+        <td>{{ vaga.morador?.cor}}</td>
+        <td>{{ vaga.morador?.placa}}</td>
+      </tr>
+  
+    </table>
+  </mat-card-content>
+
+</mat-card>
+
+
+  
+
+

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Morador } from 'src/app/models/Morador';
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-cadastrar-morador',
@@ -24,7 +25,8 @@ export class CadastrarMoradorComponent {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private route: ActivatedRoute) { } 
+    private route: ActivatedRoute,
+    private _snackBar: MatSnackBar) { } 
 
     ngOnInit(): void {
       this.route.params.subscribe((params) => {
@@ -37,6 +39,13 @@ export class CadastrarMoradorComponent {
               this.nome = morador.nome;
               this.cpf =  morador.cpf;
               this.moradorid = morador.moradorId!;     // cria uma variavel global e com esse vc consegue saber se vai cadastrar ou alterar ele controla os dois
+              this.apart = morador.apartamento;
+              this.email = morador.email;
+              this.bloco = morador.bloco
+              this.modeloVeiculo = morador.modelo_veiculo;
+              this.cor = morador.cor;
+              this.placa = morador.placa;
+          
             },
           });
         }
@@ -66,6 +75,10 @@ export class CadastrarMoradorComponent {
       // AQUI EXECUTAMOS ALGO QUANDO A REQUISIÇÃO FOR BEM SUCEDIDA
       next: (morador) => {
         //NAVIGATE LEVARA PARA A LISTA
+        this._snackBar.open("Morador Cadastrado com sucesso!", "Ok!", {
+          verticalPosition: "top",
+          horizontalPosition: "center",
+        });
         this.router.navigate(["pages/morador/listar"]);
       },
       // AQUI EXECUTAMOS ALGO QUANDO A REQUISIÇÃO FOR MAL SUCEDIDA
@@ -91,6 +104,8 @@ export class CadastrarMoradorComponent {
       cor : this.cor,
       placa : this.placa,
     };
+    console.log(morador.apartamento)
+    console.log(morador.cpf)
     // CONFIGURAÇÃO DA REQUISIÇÃO
     this.http.patch<Morador>('https://localhost:5001/api/morador/alterar',
       morador
@@ -100,6 +115,10 @@ export class CadastrarMoradorComponent {
     .subscribe({
       // AQUI EXECUTAMOS ALGO QUANDO A REQUISIÇÃO FOR BEM SUCEDIDA
       next: (morador) => {
+        this._snackBar.open("Morador alterado com sucesso!", "Ok!", {
+          verticalPosition: "top",
+          horizontalPosition: "center",
+        });
         this.router.navigate(["pages/morador/listar"]);
       },
       // AQUI EXECUTAMOS ALGO QUANDO A REQUISIÇÃO FOR MAL SUCEDIDA
