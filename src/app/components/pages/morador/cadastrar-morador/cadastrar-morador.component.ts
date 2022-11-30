@@ -39,6 +39,13 @@ export class CadastrarMoradorComponent {
               this.nome = morador.nome;
               this.cpf =  morador.cpf;
               this.moradorid = morador.moradorId!;     // cria uma variavel global e com esse vc consegue saber se vai cadastrar ou alterar ele controla os dois
+              this.apart = morador.apartamento;
+              this.email = morador.email;
+              this.bloco = morador.bloco
+              this.modeloVeiculo = morador.modelo_veiculo;
+              this.cor = morador.cor;
+              this.placa = morador.placa;
+          
             },
           });
         }
@@ -97,6 +104,8 @@ export class CadastrarMoradorComponent {
       cor : this.cor,
       placa : this.placa,
     };
+    console.log(morador.apartamento)
+    console.log(morador.cpf)
     // CONFIGURAÇÃO DA REQUISIÇÃO
     this.http.patch<Morador>('https://localhost:5001/api/morador/alterar',
       morador

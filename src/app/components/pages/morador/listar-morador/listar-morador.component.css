@@ -4,5 +4,7 @@ table{
 }
 
 .button2{
-    color: green;
+    width: 48%;
+    margin: 18px;
+    display: flex;
 }
