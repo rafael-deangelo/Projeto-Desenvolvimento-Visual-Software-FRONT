@@ -2,13 +2,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from "@angular/material/input";
+import { MatSelectModule } from "@angular/material/select";
 import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 
@@ -37,13 +40,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
+    MatCardModule,
+    MatInputModule,
+    MatSelectModule,
     MatButtonModule,
+    MatDatepickerModule,
+    MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
     MatListModule,
     MatSlideToggleModule,
-    MatCardModule,
     MatFormFieldModule
     
   ],

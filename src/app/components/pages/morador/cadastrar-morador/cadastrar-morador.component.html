@@ -1,44 +1,70 @@
-<h2>Cadastrar Morador</h2>
+<mat-card class="container">
+    <mat-card-header>
+        <mat-card-title>Cadastrar Morador</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-form-field *ngIf="moradorid" class="input" id="id">
+            <mat-label for="id">Id</mat-label>
+            <input
+                disabled=""
+                matInput
+                type="text"
+                name="id"
+                [(ngModel)]="moradorid!"
+            />
+        </mat-form-field>
+        <mat-form-field class="input" id="nome">
+            <mat-label for="txtNome">Nome</mat-label>
+            <input matInput type="text" name="nome" [(ngModel)]="nome" />
+        </mat-form-field>
+        <mat-form-field class="input" id="cpf">
+            <mat-label for="cpf">CPF</mat-label>
+            <input matInput type="text" name="cpf" [(ngModel)]="cpf" />
+        </mat-form-field>
+        <mat-form-field class="input" id="apart">
+            <mat-label for="apart">Apartamento</mat-label>
+            <input matInput type="text" name="apart" [(ngModel)]="apart" />
+        </mat-form-field>
+        <mat-form-field class="input" id="email">
+            <mat-label for="email">Email</mat-label>
+            <input matInput type="text" name="email" [(ngModel)]="email" />
+        </mat-form-field>
+        <mat-form-field class="input" id="bloco">
+            <mat-label for="bloco">Bloco</mat-label>
+            <input matInput type="text" name="bloco" [(ngModel)]="bloco" />
+        </mat-form-field>
+        <mat-form-field class="input" id="modeloVeiculo">
+            <mat-label for="modeloVeiculo">Modelo veículo</mat-label>
+            <input matInput type="text" name="modeloVeiculo" [(ngModel)]="modeloVeiculo" />
+        </mat-form-field>
+        <mat-form-field class="input" id="cor">
+            <mat-label for="cor">Cor</mat-label>
+            <input matInput type="text" name="cor" [(ngModel)]="cor" />
+        </mat-form-field>
+        <mat-form-field class="input" id="placa">
+            <mat-label for="placa">Placa</mat-label>
+            <input matInput type="text" name="placa" [(ngModel)]="placa" />
+        </mat-form-field>
 
-<div id="nome">
-    <label for="txtNome">Nome</label>
-    <input type="text" id="txtNome" [(ngModel)]="nome" />  
-</div>      
-<div id="cpf">
-    <label for="txtCpf">CPF</label>
-    <input type="text" id="txtCpf" [(ngModel)]="cpf" />
-</div>
-<div id="ap">
-    <label for="txtAp">Apartamento</label>
-    <input type="text" id="txtAp" [(ngModel)]="apart" />
-</div>
-<div id="email">
-    <label for="txtEmail">Email</label>
-    <input type="text" id="txtEmail" [(ngModel)]="email" />
-</div>
-<div id="bloco">
-    <label for="txtBloco">Bloco</label>
-    <input type="text" id="txtBloco" [(ngModel)]="bloco" />
-</div>
-<div id="modeloVeiculo">
-    <label for="txtModeloVeiculo">Modelo veículo</label>
-    <input type="text" id="txtModeloVeiculo" [(ngModel)]="modeloVeiculo" />
-</div>
-<div id="cor">
-    <label for="txtCor">Cor</label>
-    <input type="text" id="txtCor" [(ngModel)]="cor" />
-</div>
-<div id="placa">
-    <label for="txtPlaca">Placa</label>
-    <input type="text" id="txtPlaca" [(ngModel)]="placa" />
-</div>
-<div id="botao">
-    <button *ngIf="!moradorid" id="btnCadastrar" (click)="cadastrar()">Cadastrar</button>
-    <button *ngIf="moradorid" id="btnCadastrar" (click)="alterar()">Salvar</button>
-</div>
-<div>
-    <p class="erro">
-        {{ erro }}
-    </p>
-</div>
+    </mat-card-content>
+    <button class="button"
+        mat-raised-button
+        color="warn"
+        *ngIf="!moradorid"
+        id="btnCadastrar"
+        (click)="cadastrar()"
+        >
+        Cadastrar
+        </button>
+        <button
+        mat-raised-button
+        color="warn"
+        *ngIf="moradorid"
+        id="btnAlterar"
+        (click)="alterar()"
+        >
+        Salvar
+    </button>
+</mat-card>
+
 

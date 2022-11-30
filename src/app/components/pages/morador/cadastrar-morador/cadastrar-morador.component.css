@@ -1,0 +1,14 @@
+.input {
+    width: 50%;
+    display: flex;
+}
+
+.container{
+    width: 50%;
+    margin: 18px;
+}
+.button{
+    width: 48%;
+    margin: 18px;
+    display: flex;
+}
