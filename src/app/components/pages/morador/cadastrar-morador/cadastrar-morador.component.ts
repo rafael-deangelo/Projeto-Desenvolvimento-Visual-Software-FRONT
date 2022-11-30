@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Morador } from 'src/app/models/Morador';
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-cadastrar-morador',
@@ -24,7 +25,8 @@ export class CadastrarMoradorComponent {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private route: ActivatedRoute) { } 
+    private route: ActivatedRoute,
+    private _snackBar: MatSnackBar) { } 
 
     ngOnInit(): void {
       this.route.params.subscribe((params) => {
@@ -66,6 +68,10 @@ export class CadastrarMoradorComponent {
       // AQUI EXECUTAMOS ALGO QUANDO A REQUISIÇÃO FOR BEM SUCEDIDA
       next: (morador) => {
         //NAVIGATE LEVARA PARA A LISTA
+        this._snackBar.open("Morador Cadastrado com sucesso!", "Ok!", {
+          verticalPosition: "top",
+          horizontalPosition: "center",
+        });
         this.router.navigate(["pages/morador/listar"]);
       },
       // AQUI EXECUTAMOS ALGO QUANDO A REQUISIÇÃO FOR MAL SUCEDIDA
@@ -100,6 +106,10 @@ export class CadastrarMoradorComponent {
     .subscribe({
       // AQUI EXECUTAMOS ALGO QUANDO A REQUISIÇÃO FOR BEM SUCEDIDA
       next: (morador) => {
+        this._snackBar.open("Morador alterado com sucesso!", "Ok!", {
+          verticalPosition: "top",
+          horizontalPosition: "center",
+        });
         this.router.navigate(["pages/morador/listar"]);
       },
       // AQUI EXECUTAMOS ALGO QUANDO A REQUISIÇÃO FOR MAL SUCEDIDA

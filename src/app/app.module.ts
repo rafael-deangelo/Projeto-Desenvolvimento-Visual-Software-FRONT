@@ -13,7 +13,8 @@ import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -50,7 +51,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSidenavModule,
     MatListModule,
     MatSlideToggleModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTableModule,
+    MatSnackBarModule
     
   ],
   providers: [],

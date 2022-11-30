@@ -9,6 +9,7 @@ import { Vagas } from 'src/app/models/Vaga';
 })
 export class ListarVagasComponent implements OnInit{
   vagas!: Vagas[];
+
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
